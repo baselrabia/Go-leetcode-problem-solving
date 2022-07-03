@@ -6,6 +6,7 @@ import (
 )
 
 func lengthOfLongestSubstring(s string) int {
+	// using Sliding Window Technique
 
 	m1 := make(map[string]int)
 	longest := 0
