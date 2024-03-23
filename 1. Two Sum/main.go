@@ -2,6 +2,26 @@ package main
 
 import "fmt"
 
+//latest approch 
+
+func twoSum(nums []int, target int) []int {
+
+    sumarr := make( map[int]int)
+
+     for i,v := range nums {
+        if  val, ok := sumarr[target-v]; ok {
+            return []int{val,i}
+        }
+        sumarr[v] = i
+    }
+
+    return []int{}
+    
+}
+
+
+
+
 // Approach 1: Brute Force
 
 func twoSumForce(nums []int, target int) []int {
@@ -39,6 +59,8 @@ func twoSum(nums []int, target int) []int {
 
 	 
 }
+
+
 
 func main() {
 	r := twoSum([]int{2, 7, 11, 15}, 9)
