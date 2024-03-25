@@ -1,5 +1,26 @@
 package main 
-// 1
+// 1 sliding window
+
+func maxProfit(prices []int) int {
+    l,r := 0,1
+    max := 0
+
+    for (r < len(prices)){
+        if (prices[l] < prices[r]){
+             if (prices[r] - prices[l] > max) {
+                max = prices[r] - prices[l]
+            }
+        }else {
+            l = r
+        }
+        
+        r++
+    }
+     
+     return max
+}
+
+// 2
 
 func maxProfit(prices []int) int {
 	min := math.MaxUint32
@@ -22,7 +43,7 @@ func maxProfit(prices []int) int {
 
 
 
-// 2
+// 3
 
 
 func maxProfit(prices []int) int {
