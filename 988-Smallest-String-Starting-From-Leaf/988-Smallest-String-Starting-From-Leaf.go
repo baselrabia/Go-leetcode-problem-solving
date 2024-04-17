@@ -16,7 +16,7 @@ func smallestFromLeaf(root *TreeNode) string {
         
         ch := byte('a' + node.Val)
         current = string(ch) + current
-
+        // Leaf node
         if node.Left == nil && node.Right == nil {
             return current
         }
