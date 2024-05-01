@@ -1,11 +1,10 @@
 func reversePrefix(word string, ch byte) string {
     wordbyt := []byte(word)
-    var rev string
+    var rev []byte
     for i, v := range wordbyt {
-        rev =  string(v) + rev
-
+        rev = append([]byte{v}, rev...)
         if (ch == v){
-            return  rev + word[i+1:]
+            return string(rev) + string(wordbyt[i+1:])
         }
 
     }
